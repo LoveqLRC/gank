@@ -1,0 +1,73 @@
+apply plugin: 'com.android.application'
+android {
+    compileSdkVersion 25
+    buildToolsVersion "24.0.2"
+
+    defaultConfig {
+        applicationId "rc.loveq.meizhi"
+        minSdkVersion 16
+        targetSdkVersion 22
+        versionCode 3
+        versionName "1.4.9"
+        ndk {
+            //设置支持的SO库架构
+            abiFilters 'x86','armeabi', 'armeabi-v7a'
+        }
+
+
+    }
+
+    buildTypes {
+
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile 'com.android.support:appcompat-v7:25.1.0'
+    testCompile 'junit:junit:4.12'
+    compile 'com.umeng.analytics:analytics:latest.integration'
+    compile files('libs/lite-orm-1.9.2.jar')
+    //    retrofit
+    compile 'com.squareup.retrofit2:retrofit:2.1.0'
+    //    retrofit addConverterFactory
+    compile 'com.squareup.retrofit2:adapter-rxjava:2.1.0'
+    //    Okhttp log
+    compile 'com.squareup.okhttp3:logging-interceptor:3.4.2'
+    //    rxjava
+    compile 'io.reactivex:rxjava:1.1.2'
+    compile 'io.reactivex:rxandroid:1.1.0'
+    // JSON Parsing
+    compile 'com.google.code.gson:gson:2.6.1'
+    compile 'com.squareup.retrofit2:converter-gson:2.1.0'
+    compile 'com.android.support:design:25.1.0'
+    //    butterknife
+    compile 'com.jakewharton:butterknife:8.4.0'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.4.0'
+    //   glide
+    compile 'com.github.bumptech.glide:glide:3.7.0'
+    //    WebActivity进度条
+    compile 'com.daimajia.numberprogressbar:library:1.2@aar'
+    //  photoView
+    compile 'com.github.chrisbanes.photoview:library:1.2.3'
+    //  picasso
+    compile 'com.squareup.picasso:picasso:2.5.2'
+    // 权限申请
+    compile 'com.github.hotchemi:permissionsdispatcher:2.1.3'
+    annotationProcessor 'com.github.hotchemi:permissionsdispatcher-processor:2.1.3'
+    //  SwipeBack
+    compile project(':SwipeBack')
+    compile 'com.github.CarGuo:GSYVideoPlayer:v1.5.9'
+}

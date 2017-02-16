@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="rc.loveq.meizhi">
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <!-- 友盟权限 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+
+    <!-- 友盟配置信息 -->
+    <!-- 友盟 App Key -->
+    <meta-data
+        android:name="UMENG_APPKEY"
+        android:value="588c5ab6ae1bf87552001aee"/>
+    <!-- 友盟渠道号 通过占位符动态修改渠道号 -->
+    <meta-data
+        android:name="UMENG_CHANNEL"
+        android:value="youmeng"/>
+
+    <application
+        android:name=".App"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_github"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".ui.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".ui.base.BaseActivity">
+        </activity>
+        <activity android:name=".ui.WebActivity">
+        </activity>
+        <activity android:name=".ui.AboutActivity">
+        </activity>
+        <activity android:name=".ui.PictureActivity">
+        </activity>
+        <activity android:name=".ui.GankActivity">
+        </activity>
+        <activity android:name=".ui.WebDetailActivity"
+                  android:configChanges="orientation|keyboardHidden|screenSize"
+                  android:screenOrientation="portrait"
+            />
+
+
+    </application>
+
+</manifest>
